@@ -1,2 +1,2 @@
 # GeradorDeTabuada
- Estudo onde a ideia foi realizar a tabuada de multiplicação do numero digitado.
+ Estudo onde o propósito foi gerar a tabuada de multiplicação do número digitado.
