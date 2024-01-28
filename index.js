@@ -1,18 +1,20 @@
-function tabuada() {
-  let numero = document.querySelector("#txtn");
-  let tab = document.querySelector("#seltab");
+function generateMultiplicationTable() {
+  let numberMultiplicate = document.querySelector("#multiplication");
+  let showMultiplication = document.querySelector("#showMultiplication");
 
-  if (numero.value.length == 0) {
+  if (numberMultiplicate.value.length == 0) {
     alert("Por favor, digite um numero!");
   } else {
-    let n = Number(numero.value);
-    let c = 1;
-    tab.innerHTML = "";
-    while (c <= 10) {
-      let item = document.createElement("option");
-      item.text = `${n} X ${c} = ${n * c}`;
-      tab.appendChild(item);
-      c++;
+    let multiplicateValue = Number(numberMultiplicate.value);
+    let counter = 1;
+    showMultiplication.innerHTML = "";
+    while (counter <= 10) {
+      let showMultiplicationTable = document.createElement("option");
+      showMultiplicationTable.text = `${multiplicateValue} X ${counter} = ${
+        multiplicateValue * counter
+      }`;
+      showMultiplication.appendChild(showMultiplicationTable);
+      counter++;
     }
   }
 }
