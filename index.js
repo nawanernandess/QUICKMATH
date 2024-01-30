@@ -51,7 +51,7 @@ const SECOND_ROW_MODEL = [
   8,
   9,
   {
-    text: "x",
+    text: "*",
     class: "fa-solid fa-xmark",
     isIcon: true,
     callback: () => console.log("multiplication"),
@@ -77,7 +77,7 @@ const FOURTH_ROW_MODEL = [
   {
     text: "+",
     class: "fa-solid fa-plus",
-    isIcon: false,
+    isIcon: true,
     callback: () => console.log("addition"),
   },
 ];
@@ -87,14 +87,14 @@ const FIFTH_ROW_MODEL = [
   {
     text: ".",
     class: "fa-solid fa-circle",
-    isIcon: true,
+    isIcon: false,
     callback: () => console.log("dot"),
   },
   {
     text: "",
     class: "fa-solid fa-equals",
     isIcon: true,
-    callback: () => console.log("equal"),
+    callback: () => calculate(),
   },
 ];
 
@@ -157,7 +157,6 @@ function selectOperation(operation) {
     outputValueTo.value = "0";
   } else {
     outputValueTo.value += operation.text;
-    // document.getElementById("dec").disabled = false;
   }
 }
 
@@ -177,13 +176,10 @@ function creatAction(ElemArray, value) {
   });
 }
 
-function clear() {
-  document.querySelector("#inputNumber").value = 0;
-}
-
 function verifyIsIcon(elem, value) {
   if (value.isIcon) {
     elem.classList = value.class;
+    elem.classList.add("button-action");
   } else {
     if (!value.text) {
       elem.textContent = value;
@@ -191,4 +187,20 @@ function verifyIsIcon(elem, value) {
     }
     elem.textContent = value.text;
   }
+}
+
+function calculate() {
+  try {
+    var inputNumber = document.querySelector("#inputNumber");
+    if (inputNumber.value != "") {
+      var calculateResult = eval(inputNumber.value);
+      inputNumber.value = calculateResult;
+    }
+  } catch (err) {
+    inputNumber.value = "Syntax error";
+  }
+}
+
+function clear() {
+  document.querySelector("#inputNumber").value = 0;
 }

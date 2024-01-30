@@ -58,12 +58,35 @@ div {
   box-sizing: border-box;
 }
 
-.input-number {
-  width: 35%;
-  padding: 10px 10px;
+.show-result {
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  text-align: end;
+  padding: 10px 10px 4px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.show-result .input-number-calculator {
+  text-align: end;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.button-action {
+  background: #5f6368;
+  color: #e8eaed;
+  border: 1px solid #5f6368;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 8px 30px;
+  text-align: center;
+  font-size: 12px;
+  width: 72px;
 }
 
 footer {

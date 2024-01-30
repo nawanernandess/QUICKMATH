@@ -105,21 +105,33 @@
           >
             <section id="sectionCalculator">
               <div class="calculator">
-                <input
-                  type="text"
-                  name="input-number"
-                  id="inputNumber"
-                  class="input-number"
-                  value="0"
-                  readonly
-                />
+                <div class="show-result">
+                  <span class="d-flex justify-content-between">
+                    <span>t</span>
+                    <span>teste</span>
+                  </span>
+                  <input
+                    type="text"
+                    name="input-number"
+                    id="inputNumber"
+                    class="input-number-calculator"
+                    value="0"
+                    readonly
+                  />
+                </div>
 
-                <table>
-                  <tr id="firstRow"></tr>
-                  <tr id="secondRow"></tr>
-                  <tr id="thirdRow"></tr>
-                  <tr id="fourthRow"></tr>
-                  <tr id="fifthRow"></tr>
+                <table class="w-100 mt-2">
+                  <tr class="d-flex justify-content-between" id="firstRow"></tr>
+                  <tr
+                    class="d-flex justify-content-between"
+                    id="secondRow"
+                  ></tr>
+                  <tr class="d-flex justify-content-between" id="thirdRow"></tr>
+                  <tr
+                    class="d-flex justify-content-between"
+                    id="fourthRow"
+                  ></tr>
+                  <tr class="d-flex justify-content-between" id="fifthRow"></tr>
                 </table>
               </div>
             </section>
