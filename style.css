@@ -77,16 +77,26 @@ div {
   padding: 0;
 }
 
+.button-stl {
+  box-sizing: border-box;
+  padding: 8px 30px;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
 .button-action {
   background: #5f6368;
   color: #e8eaed;
   border: 1px solid #5f6368;
   border-radius: 4px;
-  box-sizing: border-box;
-  padding: 8px 30px;
-  text-align: center;
-  font-size: 12px;
-  width: 72px;
+}
+
+.button-number {
+  background: #3c4043;
+  color: #e8eaed;
+  border: 1px solid #3c4043;
+  border-radius: 4px;
 }
 
 footer {

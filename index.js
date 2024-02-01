@@ -22,25 +22,25 @@ function generateMultiplicationTable() {
 const FIRST_ROW_MODEL = [
   {
     text: "AC",
-    class: "",
+    class: "button-action button-stl",
     isIcon: false,
     callback: () => clear(),
   },
   {
     text: "",
-    class: "fa-solid fa-delete-left",
+    class: "fa-solid fa-delete-left button-action button-stl",
     isIcon: true,
     callback: () => console.log("delete"),
   },
   {
     text: "%",
-    class: "fa-solid fa-percent",
+    class: "fa-solid fa-percent button-action button-stl",
     isIcon: true,
     callback: () => console.log("percent"),
   },
   {
     text: "/",
-    class: "fa-solid fa-divide",
+    class: "fa-solid fa-divide button-action button-stl",
     isIcon: true,
     callback: () => console.log("division"),
   },
@@ -52,7 +52,7 @@ const SECOND_ROW_MODEL = [
   9,
   {
     text: "*",
-    class: "fa-solid fa-xmark",
+    class: "fa-solid fa-xmark button-action button-stl ",
     isIcon: true,
     callback: () => console.log("multiplication"),
   },
@@ -64,7 +64,7 @@ const THIRD_ROW_MODEL = [
   6,
   {
     text: "-",
-    class: "fa-solid fa-minus",
+    class: "fa-solid fa-minus button-action button-stl",
     isIcon: true,
     callback: () => console.log("subitraction"),
   },
@@ -76,7 +76,7 @@ const FOURTH_ROW_MODEL = [
   3,
   {
     text: "+",
-    class: "fa-solid fa-plus",
+    class: "fa-solid fa-plus button-action button-stl",
     isIcon: true,
     callback: () => console.log("addition"),
   },
@@ -86,13 +86,13 @@ const FIFTH_ROW_MODEL = [
   0,
   {
     text: ".",
-    class: "fa-solid fa-circle",
+    class: "button-number button-stl",
     isIcon: false,
     callback: () => console.log("dot"),
   },
   {
     text: "",
-    class: "fa-solid fa-equals",
+    class: "fa-solid fa-equals button-action button-stl",
     isIcon: true,
     callback: () => calculate(),
   },
@@ -179,13 +179,14 @@ function creatAction(ElemArray, value) {
 function verifyIsIcon(elem, value) {
   if (value.isIcon) {
     elem.classList = value.class;
-    elem.classList.add("button-action");
   } else {
     if (!value.text) {
       elem.textContent = value;
+      elem.classList.add("button-number", "button-stl");
       return;
     }
     elem.textContent = value.text;
+    elem.classList = value.class;
   }
 }
 
