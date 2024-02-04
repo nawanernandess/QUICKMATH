@@ -19,6 +19,10 @@ header {
 
 section {
   width: 500px;
+  height: 350px;
+}
+
+.card-template {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
@@ -26,17 +30,24 @@ section {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
 }
 
-div {
-  padding: 8px;
+.cursor-context {
+  cursor: context-menu;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
+/* TABs */
+.nav-link,
+.nav-link:focus,
+.nav-link:hover {
+  color: #36c682;
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #36c682;
+}
+
+/* Multiplication Table */
 .input-number-multiplication {
-  width: 50%;
   outline: none;
   border: solid #36c682 4px;
   border-radius: 4px 0 0 4px;
@@ -51,19 +62,16 @@ div {
 }
 
 .multiplication-table {
-  width: 55%;
+  height: 80%;
   padding: 10px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
+/* Calculator */
 .show-result {
-  width: 100%;
-  display: flex;
-  gap: 6px;
-  flex-direction: column;
-  text-align: end;
+  height: 30%;
   padding: 10px 10px 4px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -71,24 +79,29 @@ div {
 }
 
 .show-result .input-number-calculator {
-  text-align: end;
   border: none;
   outline: none;
-  padding: 0;
 }
 
 .button-stl {
-  box-sizing: border-box;
-  padding: 8px 30px;
-  text-align: center;
-  font-size: 12px;
   width: 100%;
+  cursor: pointer;
+  padding: 8px 30px;
+  user-select: none;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .button-action {
   background: #5f6368;
   color: #e8eaed;
   border: 1px solid #5f6368;
+  border-radius: 4px;
+}
+
+.button-equal {
+  background-color: #36c682;
+  border: 1px solid #36c682;
   border-radius: 4px;
 }
 

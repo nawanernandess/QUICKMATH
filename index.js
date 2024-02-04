@@ -30,7 +30,7 @@ const FIRST_ROW_MODEL = [
     text: "",
     class: "fa-solid fa-delete-left button-action button-stl",
     isIcon: true,
-    callback: () => console.log("delete"),
+    callback: () => deleteNumber(),
   },
   {
     text: "%",
@@ -83,26 +83,34 @@ const FOURTH_ROW_MODEL = [
 ];
 
 const FIFTH_ROW_MODEL = [
+  "",
   0,
   {
     text: ".",
-    class: "button-number button-stl",
+    class: "button-number button-stl fle",
     isIcon: false,
     callback: () => console.log("dot"),
   },
   {
     text: "",
-    class: "fa-solid fa-equals button-action button-stl",
+    class: "fa-solid fa-equals button-equal button-stl",
     isIcon: true,
     callback: () => calculate(),
   },
 ];
+
+const SHOW_HISTORY = "";
 
 function initCalculator() {
   creatCalculator();
 }
 
 function creatCalculator() {
+  let tableRow = document.querySelectorAll("tr");
+  tableRow.forEach((row) =>
+    row.classList.add("d-flex", "justify-content-between", "gap-1")
+  );
+
   let trFirst = document.querySelector("#firstRow");
   let trSecond = document.querySelector("#secondRow");
   let trThird = document.querySelector("#thirdRow");
@@ -142,12 +150,13 @@ function fifthActions(value) {
 }
 
 function showNumber(value) {
-  var outputValueTo = document.querySelector("#inputNumber");
+  let outputValueTo = document.querySelector("#inputNumber");
 
   if (outputValueTo.value == "0" || outputValueTo.value == "Syntax error") {
     outputValueTo.value = value;
   } else {
-    outputValueTo.value += value;
+    this.SHOW_HISTORY = outputValueTo.value += value;
+    console.log(outputValueTo.value);
   }
 }
 
@@ -192,16 +201,41 @@ function verifyIsIcon(elem, value) {
 
 function calculate() {
   try {
-    var inputNumber = document.querySelector("#inputNumber");
+    let inputNumber = document.querySelector("#inputNumber");
+
     if (inputNumber.value != "") {
-      var calculateResult = eval(inputNumber.value);
+      let showHistoric = document.querySelector("#showCalculatePass");
+      let calculateResult = eval(inputNumber.value);
       inputNumber.value = calculateResult;
+      showHistoric.innerHTML = this.SHOW_HISTORY + "=";
     }
   } catch (err) {
     inputNumber.value = "Syntax error";
   }
 }
 
+function deleteNumber() {
+  let inputNumber = document.querySelector("#inputNumber");
+  if (
+    inputNumber.value.length == 1 ||
+    inputNumber.value == 0 ||
+    inputNumber.value == ""
+  ) {
+    inputNumber.value = 0;
+  } else {
+    inputNumber.value = inputNumber.value.substring(
+      0,
+      inputNumber.value.length - 1
+    );
+  }
+}
+
 function clear() {
   document.querySelector("#inputNumber").value = 0;
+}
+
+function teste() {
+  var outputValueTo = document.querySelector("#inputNumber");
+  var outputHistory = document.querySelector("#showCalculatePass");
+  console.log(outputValueTo.value);
 }
