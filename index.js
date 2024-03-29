@@ -10,9 +10,8 @@ function generateMultiplicationTable() {
     showMultiplication.innerHTML = "";
     while (counter <= 10) {
       let showMultiplicationTable = document.createElement("option");
-      showMultiplicationTable.text = `${multiplicateValue} X ${counter} = ${
-        multiplicateValue * counter
-      }`;
+      showMultiplicationTable.text = `${multiplicateValue} X ${counter} = ${multiplicateValue * counter
+        }`;
       showMultiplication.appendChild(showMultiplicationTable);
       counter++;
     }
@@ -156,7 +155,6 @@ function showNumber(value) {
     outputValueTo.value = value;
   } else {
     this.SHOW_HISTORY = outputValueTo.value += value;
-    console.log(outputValueTo.value);
   }
 }
 
@@ -208,6 +206,7 @@ function calculate() {
       let calculateResult = eval(inputNumber.value);
       inputNumber.value = calculateResult;
       showHistoric.innerHTML = this.SHOW_HISTORY + "=";
+      console.log(calculateResult);
     }
   } catch (err) {
     inputNumber.value = "Syntax error";
@@ -234,8 +233,24 @@ function clear() {
   document.querySelector("#inputNumber").value = 0;
 }
 
-function teste() {
-  var outputValueTo = document.querySelector("#inputNumber");
-  var outputHistory = document.querySelector("#showCalculatePass");
-  console.log(outputValueTo.value);
+function openHistory(elem) {
+  let historyButton = document.getElementById('historyButton')
+  elem = document.getElementById('contentHistory');
+  elem.classList.toggle('d-block')
+
+
+  window.addEventListener('click', event => {
+    if (event.target == elem || event.target == historyButton) {
+      console.log(event.target);
+    } else {
+      closeHistory(elem)
+    }
+
+  })
+
+
+}
+
+function closeHistory(elem) {
+  elem.classList.remove('d-block')
 }

@@ -113,12 +113,19 @@
                 class="show-result w-100 d-flex flex-column justify-content-around gap-1"
               >
                 <span class="d-flex justify-content-between">
-                  <span>
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                  </span>
+                  <div class="position-relative">
+                    <i
+                      id="historyButton"
+                      class="fa-solid fa-clock-rotate-left poiter"
+                      onclick="openHistory(contentHistory)"
+                    ></i>
+
+                    <div id="contentHistory" class="content-history"></div>
+                  </div>
+
                   <span id="showCalculatePass" class="cursor-context"
-                    >ultimo calculo</span
-                  >
+                    >ultimo calculo
+                  </span>
                 </span>
 
                 <input

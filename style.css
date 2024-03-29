@@ -112,6 +112,22 @@ section {
   border-radius: 4px;
 }
 
+.content-history {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 300px;
+  max-height: 250px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.poiter {
+  cursor: pointer;
+}
+
 footer {
   position: fixed;
   width: 100%;
